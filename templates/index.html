@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDBC</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <a href="https://storyset.com/people"></a>
+</head>
+<body>
+    <header class="header">
+        <div class="logo"><img src="{{ url_for('static', filename='SDBLOGO-removebg-preview.png') }}" alt=""></div>
+        <nav class="nav">
+            <a href="#home" class="chip">Home</a>
+            <a href="#features" class="chip">Features</a>
+            <a href="#about" class="chip">About Us</a>
+        </nav>
+    </header>
+
+    <section class="hero"  id="home">
+        <div class="hero-content">
+            <h1>Track Performance<br>& Manage Data</h1>
+            <p>Welcome to our College Database Management System, designed for college professors to streamline academic tracking and data management. Easily access student personal details, view top 10 students, calculate CGPA, and monitor backlogs. Enhance your teaching experience with our user-friendly platform.</p>
+            <a href="#get-started" class="get-started">Get Started</a>
+        </div>
+        <div class="hero-image">
+            <img src="{{ url_for('static', filename='epcetEntrance.jpg')}}" alt="Aesthetic Image">
+        </div>
+    </section>
+
+
+    <section class="features" id="features">
+        <h2>Our Features</h2>
+        <div class="feature-card">
+            <div class="feature-content">
+                <h2>Students Data</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla id bibendum sollicitudin, lorem mi auctor mauris, in vulputate purus nulla nec leo.</p>
+                <a href="{{ url_for('view_all_students_personal_details') }}" class="btn-learn-more">Show me</a>
+            </div>
+            <div class="feature-image">
+                <img src="static/Personal data.gif" alt="Feature 1">
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-content">
+                <h2>Demographics</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla id bibendum sollicitudin, lorem mi auctor mauris, in vulputate purus nulla nec leo.</p>
+                <a href="{{ url_for('show_top_10_students') }}" class="btn-learn-more">Show me</a>
+            </div>
+            <div class="feature-image">
+                <img src="static/Game analytics.gif" alt="Feature 2">
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-content">
+                <h2>Backlog Management</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla id bibendum sollicitudin, lorem mi auctor mauris, in vulputate purus nulla nec leo.</p>
+                <a href="{{ url_for('check_backlogs') }}" class="btn-learn-more">Show me</a>
+            </div>
+            <div class="feature-image">
+                <img src="static/Business failure.gif" alt="Feature 3">
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-content">
+                <h2>Use Your Custom Data from Excel</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla id bibendum sollicitudin, lorem mi auctor mauris, in vulputate purus nulla nec leo.</p>
+                <a href="#learn-more" class="btn-learn-more">Learn More</a>
+            </div>
+            <div class="feature-image">
+                <img src="static/Data extraction.gif" alt="Feature 4">
+            </div>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-content">
+                <h2>Export Your Data</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla id bibendum sollicitudin, lorem mi auctor mauris, in vulputate purus nulla nec leo.</p>
+                <a href="#learn-more" class="btn-learn-more">Learn More</a>
+            </div>
+            <div class="feature-image">
+                <img src="static/Spreadsheets.gif" alt="Feature 5">
+            </div>
+        </div>
+    </section>
+
+    <section class="our-team" id="about">
+        <h2>Our Team</h2>
+        <div class="team-container">
+            <div class="team-card">
+                <div class="profile-picture">
+                    <img src="static/suhas.png" alt="Team Member 2">
+                </div>
+                <div class="team-info">
+                    <h3>J Suhas</h3>
+                    <p>1EP22CS032</p>
+                    <p>Lead Developer</p>
+                    <p>Bangalore</p>
+                    <a href="https://www.linkedin.com/in/j-suhas-69373b2a2" class="btn-linkedin" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="profile-picture">
+                    <img src="static/harsha.png" alt="Team Member 1">
+                </div>
+                <div class="team-info">
+                    <h3>Harshavardhan M</h3>
+                    <p>1EP22CS028</p>
+                    <p>Project Manager</p>
+                    <p>Bangalore</p>
+                    <a href="https://www.linkedin.com/in/harshavardhan-md" class="btn-linkedin" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="profile-picture">
+                    <img src="static/sathvika.png" alt="Team Member 3">
+                </div>
+                <div class="team-info">
+                    <h3>Sai Sathvika</h3>
+                    <p>1EP22CS043</p>
+                    <p>Developer</p>
+                    <p>Bangalore</p>
+                    <a href="https://www.linkedin.com/in/" class="btn-linkedin" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="profile-picture">
+                    <img src="static/anamika.png" alt="Team Member 4">
+                </div>
+                <div class="team-info">
+                    <h3>Anamika Gurung</h3>
+                    <p>1EP22CS009</p>
+                    <p>Developer</p>
+                    <p>Bangalore</p>
+                    <a href="https://www.linkedin.com/in/" class="btn-linkedin" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="static/Yellow and Pink Retro Streetwear Logo.png" alt="Company Logo">
+            </div>
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <p>We are dedicated to providing top-notch solutions for college database management. Our mission is to simplify academic tracking and enhance the teaching experience.</p>
+            </div>
+            <div class="footer-info">
+                <h3>Company Name</h3>
+                <p>Address: Bangalore, India, Pin 560043</p>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.facebook.com" class="social-icon" target="_blank">
+                    <img src="static/icons8-facebook-100.png" alt="Facebook">
+                </a>
+                <a href="https://www.twitter.com" class="social-icon" target="_blank">
+                    <img src="static/icons8-twitter-64.png" alt="Twitter">
+                </a>
+                <a href="https://www.linkedin.com" class="social-icon" target="_blank">
+                    <img src="static/icons8-linkedin-100.png" alt="LinkedIn">
+                </a>
+                <a href="https://www.instagram.com" class="social-icon" target="_blank">
+                    <img src="static/icons8-instagram-100.png" alt="Instagram">
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SDB. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    
+</body>
+</html>

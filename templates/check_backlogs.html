@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Backlogs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        function filterTable() {
+            const input = document.getElementById("searchInput");
+            const filter = input.value.toUpperCase();
+            const table = document.getElementById("backlogsTable");
+            const tr = table.getElementsByTagName("tr");
+
+            for (let i = 1; i < tr.length; i++) {
+                const td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    const txtValue = td.textContent || td.innerText;
+                    tr[i].style.display = txtValue.toUpperCase().indexOf(filter) > -1 ? "" : "none";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+    {% extends "layout.html" %}
+
+    {% block content %}
+    <div class="container">
+        <div class="backlogs-header">
+            <h2>Check Backlogs</h2>
+            <div class="search-box">
+                <label for="searchInput">Search USN:</label>
+                <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search for USN..">
+            </div>
+        </div>
+        <table class="table table-bordered mt-3" id="backlogsTable">
+            <thead>
+                <tr>
+                    <th>NAME</th>
+                    <th>USN</th>
+                    <th>SUBJECT BACKLOGS</th>
+                    <th>TOTAL BACKLOGS</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in all_students_data %}
+                <tr>
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.usn }}</td>
+                    <td>{{ student.subject_backlogs }}</td>
+                    <td>{{ student.total_backlogs }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endblock %}
+</body>
+</html>
