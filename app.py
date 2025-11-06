@@ -2,18 +2,18 @@ from flask import Flask, render_template, request
 import pymysql
 
 app = Flask(__name__)
+# MySQL database connection settings
+username = 'root'
+password = '   '
+host = 'localhost' 
+database = '   ' 
 
-DB_HOST = os.getenv("DB_HOST", "localhost")
-DB_USER = os.getenv("DB_USER", "root")
-DB_PASSWORD = os.getenv("DB_PASSWORD", "Suhas@23")
-DB_NAME = os.getenv("DB_NAME", "bcs403")
-
-# Connect to MySQL
-cnx = pymysql.connect(
-    host=DB_HOST,
-    user=DB_USER,
-    password=DB_PASSWORD,
-    database=DB_NAME
+# Create a MySQL c
+onnection cnx = pymysql.connect( 
+    user=username,
+    password=password,
+    host=host,
+    database=database
 )
 
 # Create a cursor object
