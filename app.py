@@ -3,19 +3,28 @@ import pymysql
 
 app = Flask(__name__)
 
-# MySQL database connection settings
-username = 'root'
-password = 'Suhas@23'
-host = 'localhost'
-database = 'bcs403'
+# Get database URL from environment variables
+db_url = os.environ.get('CLEARDB_DATABASE_URL')
 
-# Create a MySQL connection
-cnx = pymysql.connect(
-    user=username,
-    password=password,
-    host=host,
-    database=database
-)
+if db_url:
+    import urllib.parse as up
+    up.uses_netloc.append("mysql")
+    url = up.urlparse(db_url)
+    cnx = pymysql.connect(
+        host=url.hostname,
+        user=url.username,
+        password=url.password,
+        database=url.path[1:],  # remove leading slash
+        port=url.port or 3306
+    )
+else:
+    # Local development
+    cnx = pymysql.connect(
+        host='localhost',
+        user='root',
+        password='Suhas@23',
+        database='bcs403'
+    )
 
 # Create a cursor object
 cursor = cnx.cursor()
